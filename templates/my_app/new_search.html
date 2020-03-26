@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <form action= "{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+            <div class="input-field col s6">
+                <i class="material-icons prefix" style="color: purple">search </i>
+                <input id="search" name= "search" placeholder="Search">
+            </div>
+            <div class="center">
+                <button class="btn waves-effect waves-light" style="background-color: purple" type="submit" name="action">Search
+                    <i class="material-icons right">flash_on</i>
+                </button>
+            <div>
+    </form>
+{% endblock  %} 
