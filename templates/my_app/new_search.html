@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content%}
-    <h1 syle="text-align: center"> {{search | title }}</h2>
+    <h1 style="text-align: center"> {{search | title }}</h2>
 
         <div class="row">
             {% for post in final_postings %}
                 <div class="col s4">
-                    <div class="card">
+                    <div class="card small">
                         <div class="card-image">
                             <a href={{post.1}}><img src= {{post.3}} alt=""></a>
                         </div>
