@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content%}
-    <form action= "{% url 'new_search' %}" method="post">
-        {% csrf_token %}
-            <div class="input-field col s6">
-                <i class="material-icons prefix" style="color: purple">search </i>
-                <input id="search" name= "search" placeholder="Search">
-            </div>
-            <div class="center">
-                <button class="btn waves-effect waves-light" style="background-color: purple" type="submit" name="action">Search
-                    <i class="material-icons right">flash_on</i>
-                </button>
-            <div>
-    </form>
+    <h1 syle="text-align: center"> {{search | title }}</h2>
+
+        <div class="row">
+            {% for post in final_postings %}
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <a href={{post.1}}><img src= {{post.3}} alt=""></a>
+                        </div>
+                        <div class="card-content">
+                            <p>{{post.0}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href={{post.1}}>View listing: Price {{post.2}}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
 {% endblock  %} 
+
+
